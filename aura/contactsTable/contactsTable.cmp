@@ -6,22 +6,22 @@
     <table class="slds-table slds-table_bordered slds-table_cell-buffer">
         <thead>
             <tr class="slds-text-title_caps">
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Contact First Name">First Name</div>
                 </th>
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Contact Last Name">Last Name</div>
                 </th>
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Mobile Phone">Phone</div>
                 </th>
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Contact Email">Email</div>
                 </th>
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Birthdate">Birthdate</div>
                 </th>
-                <th scope="col">
+                <th class="contactColumn" scope="col">
                     <div class="slds-truncate" title="Account">Account</div>
                 </th>
             </tr>
@@ -31,46 +31,46 @@
                 
                 <aura:iteration items="{!v.contacts}" var="contact">
                     <tr>
-                        <td data-label="Contact First Name">
-                            <div class="slds-truncate" title="Contact First Name"><lightning:input aura:id="inputField" type="text" class=".slds-input_bare"  value="{!contact.FirstName}" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="30" pattern="[a-zA-Z]{1,30}$"/></div>
+                        <td class="editContactColumn" data-label="Contact First Name">
+                            <div class="slds-truncate inputDiv" title="Contact First Name"><lightning:input aura:id="inputField" type="text" class=".slds-input_bare contactInput"  value="{!contact.FirstName}" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="30" pattern="[a-zA-Z]{1,30}$"/></div>
                         </td>
-                        <td data-label="Contact Last Name">
-                            <div class="slds-truncate" title="Contact Last Name"><lightning:input aura:id="inputField" type="text" class=".slds-input_bare" value="{!contact.LastName}" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="30" pattern="[a-zA-Z]{1,30}$" required="true"/></div>
+                        <td class="editContactColumn" data-label="Contact Last Name">
+                            <div class="slds-truncate inputDiv" title="Contact Last Name"><lightning:input aura:id="inputField" type="text" class=".slds-input_bare contactInput" value="{!contact.LastName}" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="30" pattern="[a-zA-Z]{1,30}$" required="true"/></div>
                         </td>
-                        <td data-label="Mobile Phone">
-                            <div class="slds-truncate" title="Mobile Phone"><lightning:input aura:id="inputField" type="tel" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="13" value="{!contact.Phone}"  pattern="[\+]\d{12}"/></div>
+                        <td class="editContactColumn" data-label="Mobile Phone">
+                            <div class="slds-truncate inputDiv" title="Mobile Phone"><lightning:input aura:id="inputField" type="tel" class=".slds-input_bare contactInput" messageWhenBadInput="Заполните правильно" messageWhenPatternMismatch="Заполните правильно" maxlength="13" value="{!contact.Phone}"  pattern="[\+]\d{12}"/></div>
                         </td>
-                        <td data-label="Contact Email">
-                            <div class="slds-truncate" title="Contact Email"><lightning:input aura:id="inputField" value="{!contact.Email}" type="Email"/></div>
+                        <td class="editContactColumn" data-label="Contact Email">
+                            <div class="slds-truncate inputDiv" title="Contact Email"><lightning:input aura:id="inputField" value="{!contact.Email}" class=".slds-input_bare contactInput" type="Email"/></div>
                         </td>
-                        <td data-label="Birthdate">
-                            <div class="slds-truncate" title="Birthdate"><lightning:input value="{!contact.Birthdate}" type="Date"/></div>
+                        <td class="editContactColumn" data-label="Birthdate">
+                            <div class="slds-truncate inputDiv" title="Birthdate"><lightning:input value="{!contact.Birthdate}" class=".slds-input_bare contactInput" type="Date"/></div>
                         </td>
-                        <td data-label="Account">
+                        <td class="editContactColumn" data-label="Account">
                             <c:customLookup contact="{!contact}" selectedRecord="{!contact.Account.Name}"/>
-                          </td>
+                        </td>
                     </tr>
                 </aura:iteration>
                 <aura:set attribute="else">
                     
                     <aura:iteration items="{!v.contacts}" var="contact">
                         <tr>
-                            <td data-label="Contact First Name">
+                            <td class="contactColumn" data-label="Contact First Name">
                                 <div class="slds-truncate" title="Contact First Name">{!contact.FirstName}</div>
                             </td>
-                            <td data-label="Contact Last Name">
+                            <td class="contactColumn" data-label="Contact Last Name">
                                 <div class="slds-truncate" title="Contact Last Name">{!contact.LastName}</div>
                             </td>
-                            <td data-label="Mobile Phone">
+                            <td class="contactColumn" data-label="Mobile Phone">
                                 <div class="slds-truncate" title="Mobile Phone">{!contact.Phone}</div>
                             </td>
-                            <td data-label="Contact Email">
+                            <td class="contactColumn" data-label="Contact Email">
                                 <div class="slds-truncate" title="Contact Email">{!contact.Email}</div>
                             </td>
-                            <td data-label="Birthdate">
+                            <td class="contactColumn" data-label="Birthdate">
                                 <div class="slds-truncate" title="Birthdate">{!contact.Birthdate}</div>
                             </td>
-                            <td data-label="Account">
+                            <td class="contactColumn" data-label="Account">
                                 <div class="slds-truncate" title="Account">{!contact.Account.Name}</div>
                             </td>
                         </tr>

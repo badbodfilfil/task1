@@ -18,7 +18,7 @@
     },
     
     saveContacts : function(component) {
-        
+
         var allValid = component.find('inputField').reduce(function (validSoFar, inputCmp) {
             inputCmp.showHelpMessageIfInvalid();
             return validSoFar && inputCmp.get('v.validity').valid;
@@ -30,7 +30,7 @@
                 var state = response.getState();
                 if (state === "SUCCESS") {
                     this.getContacts(component);
-                    this.fireToastEvent("Успех!","Успешно сохранено!","success");
+                    this.fireToastEvent("Успех!","Сохранено!","success");
                     console.log(response.getReturnValue());
                 }
                 else {
@@ -40,15 +40,10 @@
             
             $A.enqueueAction(action);
         } else {
-                    this.getContacts(component);
-                    this.fireToastEvent("Ошибка!","Неправильно заполнены поля!","error");
+            this.getContacts(component);
+            this.fireToastEvent("Ошибка!","Неправильно заполнены поля!","error");
         }
-        
-        
-        
-        
-        
-        
+           
     },
     
     fireToastEvent : function(title, message, type) {

@@ -8,7 +8,7 @@
     <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
     <aura:attribute name="Message" type="String" default=""/>
     
-    <div aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+    <div aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close inputDiv" data-select="single">
           
         <div class="slds-form-element__control">
             

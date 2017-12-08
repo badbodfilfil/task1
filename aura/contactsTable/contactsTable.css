@@ -1,3 +1,20 @@
 .THIS label.slds-form-element__label.slds-no-flex{
     display:none;
 }
+.THIS .contactColumn {
+	width: 16%;
+}
+.THIS .inputDiv {
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+	height: 100%
+}
+.THIS .contactInput {
+	width: 100%;
+	height: 100%;
+	padding: 0px 0px 0px 0px;
+}
+.THIS .editContactColumn {
+	width: 16%;
+	padding: 0px 0px 0px 0px;
+}
